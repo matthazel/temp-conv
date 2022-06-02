@@ -13,23 +13,30 @@ public class TempConv {
                 Type 1 for Fahrenheit to Celsius
                 Type 2 for Celsius to Fahrenheit
                 """);
+
         conv = keyboard.findWithinHorizon(".",0).charAt(0);
 
-        if (conv == '1'){
+        // try and do this same thing, but with switch/case:
+        // https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html
+
+        // being able to read documentation is also very important ^^
+
+        if (conv == '1') {
             out.print("Enter temperature in Fahrenheit (number only): ");
             initial = keyboard.nextDouble();
             out.println();
             result = (initial - 32) * .5556;
             out.println(initial + " deg Fahrenheit is " + result + " deg Celsius.");
-        } else if (conv == '2'){
+        } else if (conv == '2') {
             out.print("Enter temperature in Celsius (number only): ");
             initial = keyboard.nextDouble();
             out.println();
             result = (initial * 1.8) + 32;
             out.println(initial + " deg Celsius is " + result + " deg Fahrenheit.");
-        } else if (conv != '1' && conv != '2'){
+        } else {
             out.println("Error: Please type 1 or 2 to choose conversion.");
         }
+
         keyboard.close();
     }
 }
